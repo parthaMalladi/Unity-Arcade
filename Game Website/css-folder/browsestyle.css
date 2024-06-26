@@ -1,0 +1,23 @@
+.games-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Adjust the height as needed */
+}
+
+.iframe-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure content does not overflow */
+}
+
+.iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.3); /* Adjust the scale value to make the content larger */
+    transform-origin: center center;
+    border: none; /* Remove default iframe border */
+}
