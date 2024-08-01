@@ -1,0 +1,41 @@
+<%- include("partials/header.ejs") %>
+
+<% if (access === 'login') { %>
+    <form action="/login" method="POST">
+        <div class="container">
+            <div class="form-group my-3 fs-5">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+            <div class="form-group my-3 fs-5">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-warning fs-5">Login</button>
+        </div>
+    </form>
+<% } else if (access === 'signup') { %>
+    <form action="/signup" method="POST">
+        <div class="container">
+            <div class="form-group my-3 fs-5">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+            <div class="form-group my-3 fs-5">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            <div class="form-group my-3 fs-5">
+                <label for="displayName">Display Name</label>
+                <input type="text" id="displayName" name="displayName" class="form-control" required>
+            </div>
+            <div class="form-group my-3 fs-5">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-warning fs-5">Sign Up</button>
+        </div>
+    </form>
+<% } %>
+
+<%- include("partials/footer.ejs") %>
