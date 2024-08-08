@@ -1,0 +1,31 @@
+<%- include("partials/header.ejs") %>
+
+<div class="d-flex flex-column align-items-center my-4">
+    <div id="buttonContainer" class="d-flex flex-wrap justify-content-center gap-3">
+      <% for (let i = 0; i < urls.length; i++) { %>
+        <div class="card text-center d-flex flex-column" style="width: 18rem;">
+          <div class="card-header bg-warning text-white font-weight-bold fs-4">
+            <%= urls[i].title %>
+          </div>
+          <div class="card-body d-flex flex-column justify-content-between">
+            <p class="card-text"><%= urls[i].description %></p>
+            <button class="btn btn-secondary mt-auto" onclick="viewURL('<%= urls[i].url %>')">
+              Play Now
+            </button>
+          </div>
+        </div>
+      <% } %>
+    </div>
+    
+    <div class="iframe-container w-100 mt-4">
+      <iframe id="urlIframe" src=""></iframe>
+    </div>
+</div>
+
+<script>
+    function viewURL(url) {
+      document.getElementById('urlIframe').src = url;
+    }
+</script>
+
+<%- include("partials/footer.ejs") %>
