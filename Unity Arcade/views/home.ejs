@@ -1,0 +1,108 @@
+<%- include("partials/header.ejs") %>
+    
+    <!--Main Content-->
+    <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <h1 class="display-4 fw-bold text-body-emphasis">Welcome To <span style="color: #ffc107">Unity Arcade</span>
+        </h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-3">Discover, play, and share a world of WebGL games created using Unity. Unity Arcade is
+                your ultimate destination for immersive, high-quality gaming experiences. Whether you're a player
+                looking for new adventures or a developer eager to showcase your creations, Unity Arcade offers a
+                seamless and engaging platform.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-3">
+                <form action="/account" method="GET">
+                    <button type="submit" name="loginType" value="signup" class="btn btn-warning btn-lg px-4 me-sm-3">Sign-up Now !</button>
+                </form>
+            </div>
+        </div>
+        <div class="overflow-hidden" style="max-height: 75vh;">
+            <div class="container px-5">
+                <img src="images/unitywebgl.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image"
+                    width="900" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <!--Features-->
+    <div class="container px-4 py-1">
+        <h2 class="pb-2 border-bottom">Features of <span style="color: #ffc107; font-weight: bold;">Unity Arcade</span>
+        </h2>
+
+        <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-3">
+            <div class="col d-flex flex-column align-items-start gap-2">
+                <h2 class="fw-bold text-body-emphasis">Join <span style="color: #ffc107; font-weight: bold;">Unity
+                        Arcade</span> Today!</h2>
+                <p class="fw-bold text-body-emphasis">Be part of a vibrant community where creativity and entertainment
+                    come together. Whether you're here to play or to share, Unity Arcade is the place to be.</p>
+                <a href="/browse" class="btn btn-warning btn-lg">Browse Games</a>
+            </div>
+
+            <div class="col">
+                <div class="row row-cols-1 row-cols-sm-2 g-4">
+                    <div class="col d-flex flex-column gap-2">
+                        <div
+                            class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-secondary bg-gradient fs-4 rounded-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                class="bi bi-dpad" viewBox="0 0 16 16">
+                                <path
+                                    d="m7.788 2.34-.799 1.278A.25.25 0 0 0 7.201 4h1.598a.25.25 0 0 0 .212-.382l-.799-1.279a.25.25 0 0 0-.424 0Zm0 11.32-.799-1.277A.25.25 0 0 1 7.201 12h1.598a.25.25 0 0 1 .212.383l-.799 1.278a.25.25 0 0 1-.424 0ZM3.617 9.01 2.34 8.213a.25.25 0 0 1 0-.424l1.278-.799A.25.25 0 0 1 4 7.201V8.8a.25.25 0 0 1-.383.212Zm10.043-.798-1.277.799A.25.25 0 0 1 12 8.799V7.2a.25.25 0 0 1 .383-.212l1.278.799a.25.25 0 0 1 0 .424Z" />
+                                <path
+                                    d="M6.5 0A1.5 1.5 0 0 0 5 1.5v3a.5.5 0 0 1-.5.5h-3A1.5 1.5 0 0 0 0 6.5v3A1.5 1.5 0 0 0 1.5 11h3a.5.5 0 0 1 .5.5v3A1.5 1.5 0 0 0 6.5 16h3a1.5 1.5 0 0 0 1.5-1.5v-3a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 0 16 9.5v-3A1.5 1.5 0 0 0 14.5 5h-3a.5.5 0 0 1-.5-.5v-3A1.5 1.5 0 0 0 9.5 0zM6 1.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3A1.5 1.5 0 0 0 11.5 6h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-3a1.5 1.5 0 0 0-1.5 1.5v3a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-3A1.5 1.5 0 0 0 4.5 10h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 0 6 4.5z" />
+                            </svg>
+                        </div>
+                        <h4 class="fw-semibold mb-0 text-body-emphasis">For Players</h4>
+                        <p class="text-body-secondary">Browse a diverse collection of Unity games across various
+                            genres.<br /><br />Connect with fellow gamers, leave reviews, and share your favorite games.
+                        </p>
+                    </div>
+
+                    <div class="col d-flex flex-column gap-2">
+                        <div
+                            class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-secondary bg-gradient fs-4 rounded-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                class="bi bi-chat-left-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                                <path d="M8 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
+                            </svg>
+                        </div>
+                        <h4 class="fw-semibold mb-0 text-body-emphasis">For Developers</h4>
+                        <p class="text-body-secondary">Easily share your Unity WebGL creations with a global
+                            audience.<br /><br />Reach a broad and engaged community of gamers.</p>
+                    </div>
+
+                    <div class="col d-flex flex-column gap-2">
+                        <div
+                            class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-secondary bg-gradient fs-4 rounded-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                class="bi bi-collection-play" viewBox="0 0 16 16">
+                                <path
+                                    d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1m2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848z" />
+                                <path
+                                    d="M1.5 14.5A1.5 1.5 0 0 1 0 13V6a1.5 1.5 0 0 1 1.5-1.5h13A1.5 1.5 0 0 1 16 6v7a1.5 1.5 0 0 1-1.5 1.5zm13-1a.5.5 0 0 0 .5-.5V6a.5.5 0 0 0-.5-.5h-13A.5.5 0 0 0 1 6v7a.5.5 0 0 0 .5.5z" />
+                            </svg>
+                        </div>
+                        <h4 class="fw-semibold mb-0 text-body-emphasis">Play Instantly</h4>
+                        <p class="text-body-secondary">Enjoy games directly in your browser with no downloads required.
+                        </p>
+                    </div>
+
+                    <div class="col d-flex flex-column gap-2">
+                        <div
+                            class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-secondary bg-gradient fs-4 rounded-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5" />
+                            </svg>
+                        </div>
+                        <h4 class="fw-semibold mb-0 text-body-emphasis">Feedback and Growth</h4>
+                        <p class="text-body-secondary">Receive feedback to improve your games and grow your following.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include("partials/footer.ejs") %>

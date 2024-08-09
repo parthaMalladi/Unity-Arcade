@@ -1,0 +1,56 @@
+<%- include("partials/header.ejs") %>
+
+<% if (loggedIn) { %>
+    <div class="container mt-4">
+        <div class="d-flex justify-content-center mb-4">
+            <button class="btn btn-warning px-5" type="button" data-bs-toggle="collapse" data-bs-target="#formContainer" aria-expanded="false" aria-controls="formContainer">
+                <span class="h5">New Entry</span>
+            </button>
+        </div>
+
+        <div class="collapse mt-3" id="formContainer">
+            <form action="/discussion" method="POST" class="border p-4 bg-light shadow-sm rounded">
+                <div class="mb-3">
+                    <label class="form-label text-secondary h4">Title</label>
+                    <input type="text" name="title" class="form-control" required>
+                    <div class="form-text">Give a title to your post.</div>
+                </div>
+    
+                <div class="mb-3">
+                    <label class="form-label text-secondary h4">Body</label>
+                    <textarea name="msg" class="form-control" rows="5" required></textarea>
+                    <div class="form-text">Type the main contents of your post.</div>
+                </div>
+
+                <button type="submit" class="btn btn-warning">Submit</button>
+            </form>
+        </div>
+    </div>
+<% } else { %>
+    <div class="container mt-4 text-center">
+        <h1 class="text-warning">Login to make a post</h1>
+    </div>
+<% } %>
+
+<div class="container mt-4">
+    <% for (let i = 0; i < forum.length; i++) { %>
+        <div class="card mb-3">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="card-title text-secondary fs-3"><%= forum[i].title %></h5>
+                    <small class="text-muted">Posted on: <%= new Date(forum[i].created_at).toLocaleString() %></small>
+                </div>
+                <% if (loggedIn && forum[i].user_id == details[0].id) { %>
+                    <form action="/deleteDiscussion" method="POST">
+                        <button class="btn btn-warning" type="submit" name="postId" value="<%= forum[i].id %>">Delete</button>
+                    </form>
+                <% } %>
+            </div>
+            <div class="card-body">
+                <p class="card-text"><%= forum[i].post %></p>
+            </div>
+        </div>        
+    <% } %>
+</div>
+
+<%- include("partials/footer.ejs") %>
