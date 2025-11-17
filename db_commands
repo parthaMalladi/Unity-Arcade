@@ -1,0 +1,26 @@
+-- CLIENTS TABLE --
+CREATE TABLE clients (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE
+);
+
+-- FORUM TABLE --
+CREATE TABLE forum (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    post TEXT NOT NULL,
+    user_id INTEGER REFERENCES clients(id) ON DELETE SET NULL,
+    created_at TIMESTAMP DEFAULT NOW()
+);
+
+-- URLS TABLE --
+CREATE TABLE urls (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    url VARCHAR(255) NOT NULL,
+    user_id INTEGER REFERENCES clients(id) ON DELETE CASCADE
+);

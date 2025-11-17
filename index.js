@@ -25,7 +25,7 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/browse", async (req, res) => {
-  const users = await db.query("SELECT id,username,name FROM users");
+  const users = await db.query("SELECT id,username,name FROM clients");
   res.render("browse.ejs", {loggedIn : isLoggedIn, details : user, libraries: users.rows});
 });
 
@@ -68,7 +68,7 @@ app.post("/login", async (req, res) => {
   const temp = req.body;
   try {
     const userInfo = await db.query(
-      "SELECT * FROM users WHERE username = ($1)",
+      "SELECT * FROM clients WHERE username = ($1)",
       [temp.username]
     );
 
@@ -84,7 +84,7 @@ app.post("/signup", async (req, res) => {
   const temp = req.body;
   try {
     await db.query(
-      "INSERT INTO users (username, password_hash, name, email) VALUES ($1, $2, $3, $4)",
+      "INSERT INTO clients (username, password_hash, name, email) VALUES ($1, $2, $3, $4)",
       [temp.username, temp.password, temp.displayName, temp.email]
     );
   } catch (err) {
