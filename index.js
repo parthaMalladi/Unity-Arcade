@@ -1,18 +1,32 @@
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
+import dotenv from "dotenv";
 
-const db = new pg.Client({
-  user: "postgres",
-  host: "localhost",
-  database: "UnityArcade",
-  password: "",
-  port: 5432,
+dotenv.config();
+const { Pool } = pg;
+const poolConfig = {
+  max: 5,
+  min: 2,
+  idleTimeoutMillis: 60000,
+  ssl: { rejectUnauthorized: false }
+};
+const dbUser = process.env.DB_USER;
+const password = process.env.PASSWORD;
+const host = process.env.HOST;
+const dbPort = process.env.PORT;
+const database = process.env.DATABASE;
+
+poolConfig.connectionString = `postgresql://${dbUser}:${password}@${host}:${dbPort}/${database}`;
+const db = new Pool(poolConfig);
+
+// Pool-level error listener
+db.on("error", (err) => {
+  console.error("Unexpected database error:", err);
 });
 
 const app = express();
 const port = 3000;
-db.connect();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
