@@ -14,7 +14,7 @@ const poolConfig = {
 const dbUser = process.env.DB_USER;
 const password = process.env.PASSWORD;
 const host = process.env.HOST;
-const dbPort = process.env.PORT;
+const dbPort = process.env.DB_PORT;
 const database = process.env.DATABASE;
 
 poolConfig.connectionString = `postgresql://${dbUser}:${password}@${host}:${dbPort}/${database}`;
