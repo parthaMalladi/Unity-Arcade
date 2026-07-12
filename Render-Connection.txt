@@ -1,0 +1,8 @@
+1. Make a new Postgres instance (if not already created) on Render
+2. Connect to it using the External Database URL and DataGrip
+3. Run a query to create the required tables. The tables are in the file db_commands
+4. Now go back to Render and update the env variables to connect to the database
+
+Games you can add after creating an account
+- https://parthamalladi.github.io/2-person-project/
+- https://parthamalladi.github.io/Project5/
