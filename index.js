@@ -36,6 +36,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
+// Render (and most hosts) terminate HTTPS at a proxy and forward plain HTTP internally.
+// Without this, Express thinks every request is insecure, so a "secure" cookie never gets set.
+app.set("trust proxy", 1);
+
 app.use(session({
   store: new PgSession({
     pool: db,
