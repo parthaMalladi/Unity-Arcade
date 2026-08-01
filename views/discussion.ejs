@@ -40,7 +40,7 @@
                     <h5 class="card-title text-secondary fs-3"><%= forum[i].title %></h5>
                     <small class="text-muted">Posted on: <%= new Date(forum[i].created_at).toLocaleString() %></small>
                 </div>
-                <% if (loggedIn && forum[i].user_id == details[0].id) { %>
+                <% if (loggedIn && forum[i].user_id == details.id) { %>
                     <form action="/deleteDiscussion" method="POST">
                         <button class="btn btn-warning" type="submit" name="postId" value="<%= forum[i].id %>">Delete</button>
                     </form>

@@ -22,5 +22,16 @@ CREATE TABLE urls (
     title VARCHAR(255) NOT NULL,
     description TEXT,
     url VARCHAR(255) NOT NULL,
-    user_id INTEGER REFERENCES clients(id) ON DELETE CASCADE
+    user_id INTEGER REFERENCES clients(id) ON DELETE CASCADE,
+    likes INTEGER DEFAULT 0 NOT NULL,
+    dislikes INTEGER DEFAULT 0 NOT NULL
+);
+
+-- GAME_REACTIONS TABLE --
+CREATE TABLE game_reactions (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES clients(id) ON DELETE CASCADE,
+    url_id INTEGER REFERENCES urls(id) ON DELETE CASCADE,
+    reaction VARCHAR(10) NOT NULL CHECK (reaction IN ('like', 'dislike')),
+    UNIQUE (user_id, url_id)
 );

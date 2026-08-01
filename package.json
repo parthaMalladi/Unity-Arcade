@@ -12,10 +12,13 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "body-parser": "^1.20.2",
+    "connect-pg-simple": "^10.0.0",
     "dotenv": "^17.2.3",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
+    "express-session": "^1.19.0",
     "pg": "^8.12.0"
   }
 }
